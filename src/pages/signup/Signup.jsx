@@ -59,9 +59,10 @@ const SignupForm = () => {
     <div className="form-cont">
       <Form className="login-form" onSubmit={handleSubmit}>
         <h1 className="sidebar-title-signup pt-3 ml-5">WheelWizard</h1>
-               {serverError && <p className="text-danger">{serverError.toString()}</p>}
+        {serverError && <p className="text-danger">{serverError.toString()}</p>}
 
         <Form.Group className="mb-3" controlId="formBasicName">
+          {' '}
           <Form.Control
             type="text"
             placeholder="Enter your name"
