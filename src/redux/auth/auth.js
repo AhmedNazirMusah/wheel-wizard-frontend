@@ -5,6 +5,7 @@ import {
   SIGNUP_SUCCESS,
   SIGNUP_FAIL,
   LOGOUT,
+  CLEAR_ERRORS,
 } from '../types';
 import { getToken, createAccount } from '../../APIs/user';
 
@@ -14,6 +15,8 @@ const initialState = {
   error: null,
   success: null,
 };
+
+export const clearErrors = () => ({ type: CLEAR_ERRORS });
 
 export const login = (reqBody) => async (dispatch) => {
   try {
@@ -51,6 +54,8 @@ export const authReducer = (state = initialState, action) => {
       return { ...state, success: true, message: action.payload };
     case SIGNUP_FAIL:
       return { ...state, success: false, error: action.payload };
+    case CLEAR_ERRORS:
+      return { ...state, error: null, success: null };
     case LOGOUT:
       return { success: true, isAuthenticated: false, token: null };
     default:
