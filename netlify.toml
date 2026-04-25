@@ -3,4 +3,4 @@
   publish = "build"
 
 [build.environment]
-  REACT_APP_API_URL = "https://wheel-wizard.onrender.com"
+  REACT_APP_API_URL = "https://wheel-wizard-api.onrender.com"
