@@ -8,8 +8,11 @@ export const createAccount = async (reqBody) => {
     toast.success('Signed Up Successfully');
     return response.data;
   } catch (error) {
-    toast.error('Oops, check password confirmation');
-    throw new Error(error);
+    const message = error.response?.data?.errors?.join(', ')
+      || error.response?.data?.error
+      || 'Sign up failed';
+    toast.error(message);
+    throw new Error(message);
   }
 };
 
@@ -21,9 +24,9 @@ export const getToken = async (reqBody) => {
     toast.success('Logged in successfully');
     return response.data;
   } catch (error) {
-    if (error.response.status === 401) {
+    if (error.response?.status === 401) {
       toast.error('Invalid email or password');
     }
-    throw new Error(error);
+    throw new Error(error.response?.data?.error || 'Login failed');
   }
 };
