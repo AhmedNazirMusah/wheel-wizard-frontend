@@ -29,8 +29,8 @@ const LoginForm = () => {
   return (
     <div className="form-cont">
       <Form className="login-form" onSubmit={handleSubmit}>
-        <h1 className="sidebar-title-signup pt-3 ml-5">WheelWizard</h1>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <h1 className="sidebar-title-signup pt-3">WheelWizard</h1>
+        <Form.Group className="mb-3 w-100" controlId="formBasicEmail">
           <Form.Control
             type="email"
             placeholder="Enter email"
@@ -40,7 +40,7 @@ const LoginForm = () => {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="mb-3 w-100" controlId="formBasicPassword">
           <Form.Control
             type="password"
             placeholder="Password"
@@ -49,9 +49,11 @@ const LoginForm = () => {
             required
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
-          {isLoading ? <img src={loader} alt="loading" className="spinner" /> : 'Login'}
-        </Button>
+        <Form.Group className="mb-3 w-100">
+          <Button variant="primary" type="submit" className="w-100">
+            {isLoading ? <img src={loader} alt="loading" className="spinner" /> : 'Login'}
+          </Button>
+        </Form.Group>
         <div className="d-flex account">
           <p>No account yet? Click here to Sign Up</p>
           <Button variant="white" type="button" className="btn plain-btn" onClick={() => navigate('/signup')}>

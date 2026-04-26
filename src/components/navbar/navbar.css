@@ -7,19 +7,31 @@
   .mob-nav {
     display: flex !important;
     flex-direction: row;
-    padding: 15px;
-    position: absolute;
+    padding: 10px 20px;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 9999999999;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .mob-nav .sidebar-title {
+    margin: 0 !important;
+    font-size: 2rem;
+    transform: rotate(-5deg);
+    color: #98c10f;
   }
 
   .hamburger-btn {
-    color: aliceblue !important;
+    color: white !important;
     outline: none;
+    border: none;
   }
 
   .hamburger-btn:focus {
-    outline: 2px;
+    box-shadow: none;
   }
 }

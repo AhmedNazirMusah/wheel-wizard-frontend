@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import { useDispatch, useSelector } from 'react-redux';
 import { signup, clearErrors } from '../../redux/auth/auth';
 import loader from '../../assets/loader2.gif';
+import '../login/login.css';
 
 const SignupForm = () => {
   const [name, setName] = useState('');
@@ -58,11 +59,14 @@ const SignupForm = () => {
   return (
     <div className="form-cont">
       <Form className="login-form" onSubmit={handleSubmit}>
-        <h1 className="sidebar-title-signup pt-3 ml-5">WheelWizard</h1>
-        {serverError && <p className="text-danger">{serverError.toString()}</p>}
+        <h1 className="sidebar-title-signup pt-3">WheelWizard</h1>
+        {serverError && (
+          <p className="text-danger text-center w-100 mb-3" style={{ fontSize: '14px' }}>
+            {serverError.toString()}
+          </p>
+        )}
 
-        <Form.Group className="mb-3" controlId="formBasicName">
-          {' '}
+        <Form.Group className="mb-3 w-100" controlId="formBasicName">
           <Form.Control
             type="text"
             placeholder="Enter your name"
@@ -73,7 +77,7 @@ const SignupForm = () => {
           <Form.Control.Feedback type="invalid">{formErrors.name}</Form.Control.Feedback>
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3 w-100" controlId="formBasicEmail">
           <Form.Control
             type="email"
             placeholder="Enter email"
@@ -84,7 +88,7 @@ const SignupForm = () => {
           <Form.Control.Feedback type="invalid">{formErrors.email}</Form.Control.Feedback>
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="mb-3 w-100" controlId="formBasicPassword">
           <Form.Control
             type="password"
             placeholder="Password"
@@ -95,7 +99,7 @@ const SignupForm = () => {
           <Form.Control.Feedback type="invalid">{formErrors.password}</Form.Control.Feedback>
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formConfirmPassword">
+        <Form.Group className="mb-3 w-100" controlId="formConfirmPassword">
           <Form.Control
             type="password"
             placeholder="Password Confirmation"
@@ -106,9 +110,11 @@ const SignupForm = () => {
           <Form.Control.Feedback type="invalid">{formErrors.confirmPassword}</Form.Control.Feedback>
         </Form.Group>
 
-        <Button variant="primary" type="submit" disabled={isLoading}>
-          {isLoading ? <img src={loader} alt="loading" className="spinner" /> : 'Signup'}
-        </Button>
+        <Form.Group className="mb-3 w-100">
+          <Button variant="primary" type="submit" disabled={isLoading} className="w-100">
+            {isLoading ? <img src={loader} alt="loading" className="spinner" /> : 'Signup'}
+          </Button>
+        </Form.Group>
         <div className="d-flex account">
           <p>Already have an account? Click here to Log in</p>
           <Button variant="white" type="button" className="btn plain-btn" onClick={() => navigate('/login')}>

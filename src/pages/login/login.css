@@ -14,9 +14,9 @@
   width: 30rem;
   flex-direction: column;
   justify-content: center;
-  height: 40rem;
-  flex-wrap: wrap;
-  align-content: center;
+  min-height: 40rem;
+  height: auto;
+  padding: 2rem;
   z-index: 9;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(1px);
@@ -31,7 +31,7 @@
   transform: rotate(-13deg);
   text-align: center;
   color: #fff;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   font-size: 3rem;
 }
 
@@ -58,10 +58,12 @@
   gap: 1rem;
   align-items: center;
   margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .account > p {
-  margin-top: 13px;
+  margin: 0;
 }
 
 .account > button {
@@ -82,13 +84,17 @@
 @media only screen and (max-width: 768px) {
   .login-form {
     width: 90%;
+    min-height: 30rem;
+    padding: 1.5rem;
   }
 
   .account {
-    gap: 0.2rem;
+    gap: 0.5rem;
+    flex-direction: column;
+    text-align: center;
   }
 
   .account > p {
-    font-size: 11px;
+    font-size: 14px;
   }
 }

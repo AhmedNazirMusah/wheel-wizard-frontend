@@ -3,17 +3,19 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url(../../assets/listcars.avif);
   background-repeat: no-repeat;
   background-size: cover;
+  padding-bottom: 2rem;
 }
 
 .table {
   margin-top: 8rem;
-  box-shadow: 1px 4px 8px 2px;
+  box-shadow: 1px 4px 8px 2px rgba(0,0,0,0.2);
   height: max-content;
-  width: 60%;
+  width: 90%;
+  max-width: 1000px;
   background-color: #fff;
   z-index: 100;
 }
@@ -54,13 +56,28 @@
   padding-top: 6rem;
   font-weight: 600;
   border-bottom: 1px solid;
+  text-align: center;
+}
+
+.error-msg {
+  color: #fff;
+  background-color: rgba(255, 0, 0, 0.5);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  margin-top: 10rem;
+  z-index: 1000;
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 768px) {
   .table {
-    width: 20rem;
-    overflow: hidden;
-    font-size: 9px;
+    width: 95%;
+    margin-top: 6rem;
+    font-size: 11px;
+  }
+
+  .table th, .table td {
+    padding: 0.5rem 0.2rem;
   }
 
   .table th:first-child,
@@ -68,20 +85,15 @@
     display: none;
   }
 
-  .table th:nth-child(4),
-  .table th:nth-child(5) {
-    text-align: center;
-  }
-
   .table-btn {
-    width: fit-content;
-    font-size: 6px;
-    padding: 0.1rem;
+    width: 100%;
+    font-size: 10px;
+    padding: 0.2rem;
   }
 
   .table-img {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
   }
 
   .no-reservations {

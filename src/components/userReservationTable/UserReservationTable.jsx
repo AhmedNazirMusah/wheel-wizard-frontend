@@ -56,7 +56,11 @@ const UserReservationTable = () => {
   }
 
   if (error) {
-    return <div>{error}</div>;
+    return (
+      <div className="tablecont">
+        <div className="error-msg">{error}</div>
+      </div>
+    );
   }
 
   return (
